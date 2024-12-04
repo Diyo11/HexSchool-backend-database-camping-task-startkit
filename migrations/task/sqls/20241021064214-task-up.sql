@@ -91,27 +91,23 @@ INSERT INTO "CREDIT_PACKAGE" (name, price, credit_amount) VALUES
 --         (SELECT credit_amount FROM "CREDIT_PACKAGE" WHERE name = '14 堂組合包方案'),
 --         (SELECT price FROM "CREDIT_PACKAGE" WHERE name = '14 堂組合包方案')
 --     );
-INSERT INTO "CREDIT_PURCHASE" (user_id,credit_package_id,purchased_credits,price_paid)
-select u.id
-      ,cp.id
-      ,cp.credit_amount
-      ,cp.price
-FROM "USER" as "u"
-    cross join "CREDIT_PACKAGE" as "cp"
-WHERE u.email = 'wXlTq@hexschooltest.io'
-		AND cp.name in ('14 堂組合包方案','21 堂組合包方案');
-        
---- 以 insert into + select 的方式多筆上傳
---- 新增 好野人 購買 14 堂數組合包
-INSERT INTO "CREDIT_PURCHASE" (user_id,credit_package_id,purchased_credits,price_paid)
-select u.id
-      ,cp.id
-      ,cp.credit_amount
-      ,cp.price
-FROM "USER" as "u"
-    cross join "CREDIT_PACKAGE" as "cp"
-WHERE u.email = 'richman@hexschooltest.io'
-		AND cp.name in ('14 堂組合包方案');
+INSERT INTO "CREDIT_PURCHASE" (user_id, credit_package_id, purchased_credits, price_paid)
+    VALUES (
+        (SELECT id FROM "USER" WHERE name = '王小明'),
+        (SELECT id FROM "CREDIT_PACKAGE" WHERE name = '14 堂組合包方案'),
+        (SELECT credit_amount FROM "CREDIT_PACKAGE" WHERE name = '14 堂組合包方案'),
+        (SELECT price FROM "CREDIT_PACKAGE" WHERE name = '14 堂組合包方案')
+    ), (
+        (SELECT id FROM "USER" WHERE name = '王小明'),
+        (SELECT id FROM "CREDIT_PACKAGE" WHERE name = '21 堂組合包方案'),
+        (SELECT credit_amount FROM "CREDIT_PACKAGE" WHERE name = '21 堂組合包方案'),
+        (SELECT price FROM "CREDIT_PACKAGE" WHERE name = '21 堂組合包方案')
+    ), (
+        (SELECT id FROM "USER" WHERE name = '好野人'),
+        (SELECT id FROM "CREDIT_PACKAGE" WHERE name = '14 堂組合包方案'),
+        (SELECT credit_amount FROM "CREDIT_PACKAGE" WHERE name = '14 堂組合包方案'),
+        (SELECT price FROM "CREDIT_PACKAGE" WHERE name = '14 堂組合包方案')
+    );
 
 
 -- ████████  █████   █    ████   
