@@ -72,21 +72,21 @@
     -- 1. `王小明` 購買 `14 堂組合包方案`
     -- 2. `王小明` 購買 `21 堂組合包方案`
     -- 3. `好野人` 購買 `14 堂組合包方案`
-INSERT INTO "CREDIT_PURCHASE" (user_id, credit_package_id, purchased_credits, price_paid) VALUES
-	((SELECT id FROM "USER" WHERE email = 'wXlTq@hexschooltest.io'),
-   (SELECT id FROM "CREDIT_PACKAGE" WHERE name = '14 堂組合包方案'),
-   (SELECT credit_amount FROM "CREDIT_PACKAGE" WHERE name = '14 堂組合包方案'),
-   (SELECT price FROM "CREDIT_PACKAGE" WHERE name = '14 堂組合包方案')),
+-- INSERT INTO "CREDIT_PURCHASE" (user_id, credit_package_id, purchased_credits, price_paid) VALUES
+-- 	((SELECT id FROM "USER" WHERE email = 'wXlTq@hexschooltest.io'),
+--    (SELECT id FROM "CREDIT_PACKAGE" WHERE name = '14 堂組合包方案'),
+--    (SELECT credit_amount FROM "CREDIT_PACKAGE" WHERE name = '14 堂組合包方案'),
+--    (SELECT price FROM "CREDIT_PACKAGE" WHERE name = '14 堂組合包方案')),
    
-  ((SELECT id FROM "USER" WHERE email = 'wXlTq@hexschooltest.io'),
-   (SELECT id FROM "CREDIT_PACKAGE" WHERE name = '21 堂組合包方案'),
-   (SELECT credit_amount FROM "CREDIT_PACKAGE" WHERE name = '21 堂組合包方案'),
-   (SELECT price FROM "CREDIT_PACKAGE" WHERE name = '21 堂組合包方案')),
+--   ((SELECT id FROM "USER" WHERE email = 'wXlTq@hexschooltest.io'),
+--    (SELECT id FROM "CREDIT_PACKAGE" WHERE name = '21 堂組合包方案'),
+--    (SELECT credit_amount FROM "CREDIT_PACKAGE" WHERE name = '21 堂組合包方案'),
+--    (SELECT price FROM "CREDIT_PACKAGE" WHERE name = '21 堂組合包方案')),
    
-  ((SELECT id FROM "USER" WHERE email = 'richman@hexschooltest.io'),
-   (SELECT id FROM "CREDIT_PACKAGE" WHERE name = '14 堂組合包方案'),
-   (SELECT credit_amount FROM "CREDIT_PACKAGE" WHERE name = '14 堂組合包方案'),
-   (SELECT price FROM "CREDIT_PACKAGE" WHERE name = '14 堂組合包方案'));
+--   ((SELECT id FROM "USER" WHERE email = 'richman@hexschooltest.io'),
+--    (SELECT id FROM "CREDIT_PACKAGE" WHERE name = '14 堂組合包方案'),
+--    (SELECT credit_amount FROM "CREDIT_PACKAGE" WHERE name = '14 堂組合包方案'),
+--    (SELECT price FROM "CREDIT_PACKAGE" WHERE name = '14 堂組合包方案'));
 
 
 -- ████████  █████   █    ████   
@@ -100,10 +100,10 @@ INSERT INTO "CREDIT_PURCHASE" (user_id, credit_package_id, purchased_credits, pr
     -- 1. 將用戶`李燕容`新增為教練，並且年資設定為2年（提示：使用`李燕容`的email ，取得 `李燕容` 的 `id` ）
     -- 2. 將用戶`肌肉棒子`新增為教練，並且年資設定為2年
     -- 3. 將用戶`Q太郎`新增為教練，並且年資設定為2年
--- insert into "COACH" (user_id ,experience_years ) values
--- 	((select id from "USER" where email = 'lee2000@hexschooltest.io'), 2),
--- 	((select id from "USER" where email = 'muscle@hexschooltest.io'), 2),
--- 	((select id from "USER" where email = 'starplatinum@hexschooltest.io'), 2);
+insert into "COACH" (user_id ,experience_years ) values
+	((select id from "USER" where email = 'lee2000@hexschooltest.io'), 2),
+	((select id from "USER" where email = 'muscle@hexschooltest.io'), 2),
+	((select id from "USER" where email = 'starplatinum@hexschooltest.io'), 2);
 
 
 -- 3-2. 新增：承1，為三名教練新增專長資料至 `COACH_LINK_SKILL` ，資料需求如下：
