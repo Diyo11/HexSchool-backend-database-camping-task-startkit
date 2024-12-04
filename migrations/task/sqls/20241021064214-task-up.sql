@@ -79,7 +79,7 @@ VALUES
   (
     (SELECT id FROM "USER" WHERE email = 'lee2000@hexschooltest.io'),
     2
-  ),
+  ) is null,
   (
     (SELECT id FROM "USER" WHERE name = '肌肉棒子'),
     2
@@ -88,7 +88,7 @@ VALUES
     (SELECT id FROM "USER" WHERE name = 'Q太郎'),
     2
   );
-  
+
 -- 3-2. 新增：承1，為三名教練新增專長資料至 `COACH_LINK_SKILL` ，資料需求如下：
     -- 1. 所有教練都有 `重訓` 專長
     -- 2. 教練`肌肉棒子` 需要有 `瑜伽` 專長
